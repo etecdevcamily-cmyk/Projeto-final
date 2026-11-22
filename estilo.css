@@ -1,3 +1,67 @@
-body{
-    background-color: #F8FAFC;
+/* Variáveis com a paleta Roxa Tech (Regra 60-30-10) */
+:root {
+    --cor-fundo: #09090B;          /* 60% - Preto profundo para o fundo */
+    --cor-superficie: #18181B;     /* 30% - Grafite escuro para o cabeçalho */
+    --cor-roxo-principal: #7C3AED; /* 10% - Roxo ametista vibrante */
+    --cor-roxo-claro: #A78BFA;     /* Lilás suave para efeitos de hover */
+    --cor-texto: #FAFAFA;          /* Branco para leitura */
+    --cor-texto-suave: #A1A1AA;    /* Cinza neutro para links inativos */
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Estilização do Cabeçalho e Navegação */
+header {
+    background-color: var(--cor-superficie);
+    padding: 1.2rem 2rem;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.25); /* Borda sutil em roxo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-texto-suave);
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Efeito ao passar o mouse (Hover) */
+nav a:hover {
+    color: var(--cor-roxo-claro);
+}
+
+/* Linha animada com gradiente roxo abaixo do link */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background: linear-gradient(90deg, var(--cor-roxo-principal), #EC4899);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
